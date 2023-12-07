@@ -2,11 +2,11 @@ const mysql = require('mysql2');
 
 function createConnection() {
   const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'ossca-2023-software-do-user-14718390-0.c.db.ondigitalocean.com',
+    user: 'doadmin',
+    password: 'AVNS_aHlAvJfQrfj8M35-uKb',
     database: 'orion',
-    //port: 25060
+    port: 25060
     
   });
 
