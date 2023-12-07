@@ -94,7 +94,7 @@ exports.inicioServicioMostrador = (req, res)=>{
                 }else if(results.length === 1){
                     const qrAsignado = results[0].qr;
                     const siglas = results3[0].siglas;
-                    connection.query('INSERT INTO serviciosMostrador SET ?',{nombrePax:nombrePax,aerolinea:aerolinea,vuelo:vuelo,noSilla:noSilla,puerta:puerta,ETA:ETA,ASIENTO:asiento,
+                    connection.query('INSERT INTO serviciosmostrador SET ?',{nombrePax:nombrePax,aerolinea:aerolinea,vuelo:vuelo,noSilla:noSilla,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                                              noColaborador:siglas,fechaServicio:fechaServicio,tipoVuelo:tipoVuelo,origenReserva:origenReserva,
                                                                              qrAsignado:qrAsignado,usuarioInicio:usuarioInicio,observaciones:observaciones,
                                                                              estacion:estacion,horaInicio:horaInicio,tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado,statusServicio:statusServicio}, (error, results2)=>{
@@ -143,7 +143,7 @@ exports.modificaMostrador = (req, res)=>{
     const servicioSolicitado = req.body.ServicioSolicitado;
     const statusServicio = 'INICIADO';
 
-    connection.query('UPDATE serviciosMostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombrePax:nombrePax,vuelo:vuelo,puerta:puerta,ETA:ETA,ASIENTO:asiento,
+    connection.query('UPDATE serviciosmostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombrePax:nombrePax,vuelo:vuelo,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                             tipoVuelo:tipoVuelo,origenReserva:origenReserva,
                                                             usuarioModifico:usuarioModifico,observaciones:observaciones,
                                                             tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado}, noServicio,estacion], (error, results2)=>{
@@ -188,7 +188,7 @@ exports.cerrarMostrador = (req, res)=>{
         statusServicio = 'COMPLETADO';
     }
 
-    connection.query('UPDATE serviciosMostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombrePax:nombrePax,vuelo:vuelo,puerta:puerta,ETA:ETA,ASIENTO:asiento,
+    connection.query('UPDATE serviciosmostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombrePax:nombrePax,vuelo:vuelo,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                             tipoVuelo:tipoVuelo,origenReserva:origenReserva,nombreAgente:nombreAgente,firmaAgente:firmaBase64,
                                                             usuarioModifico:usuarioModifico,observaciones:observaciones,statusServicio:statusServicio,horaFin:horaFin,
                                                             tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado}, noServicio,estacion], (error, results2)=>{
@@ -213,7 +213,7 @@ exports.firmaMostrador = (req, res)=>{
     const estacion = req.body.estacion;
     const statusServicio = 'COMPLETADO';
 
-    connection.query('UPDATE serviciosMostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombreAgente:nombreAgente,firmaAgente:firmaBase64,statusServicio:statusServicio}, noServicio,estacion], (error, results2)=>{
+    connection.query('UPDATE serviciosmostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombreAgente:nombreAgente,firmaAgente:firmaBase64,statusServicio:statusServicio}, noServicio,estacion], (error, results2)=>{
         if(error){
             console.log(error);
         }else{
@@ -408,7 +408,7 @@ exports.inicioControlLlegadas = (req, res)=>{
                 }else if(results.length === 1){
                     const qrAsignado = results[0].qr;
                     const siglas = results3[0].siglas;
-                    connection.query('INSERT INTO serviciosMostrador SET ?',{nombrePax:nombrePax,aerolinea:aerolinea,vuelo:vuelo,noSilla:noSilla,puerta:puerta,ETA:ETA,ASIENTO:asiento,
+                    connection.query('INSERT INTO serviciosmostrador SET ?',{nombrePax:nombrePax,aerolinea:aerolinea,vuelo:vuelo,noSilla:noSilla,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                                              noColaborador:siglas,fechaServicio:fechaServicio,tipoVuelo:tipoVuelo,origenReserva:origenReserva,
                                                                              qrAsignado:qrAsignado,usuarioInicio:usuarioInicio,observaciones:observaciones,
                                                                              estacion:estacion,horaInicio:horaInicio,tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado,statusServicio:statusServicio}, (error, results2)=>{

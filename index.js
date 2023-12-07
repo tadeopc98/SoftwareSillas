@@ -149,7 +149,7 @@ app.get('/administrador',verificarSesion, (req, res) => {
 });
 
 app.get('/agenteAerolinea',verificarSesion, (req, res)=>{     
-  connection.query('SELECT * FROM serviciosMostrador WHERE statusServicio = ? ORDER BY fechaServicio, horaFin ASC',['TERMINADO'],(error, results)=>{
+  connection.query('SELECT * FROM serviciosmostrador WHERE statusServicio = ? ORDER BY fechaServicio, horaFin ASC',['TERMINADO'],(error, results)=>{
       if(error){
           throw error;
       } else {
@@ -208,7 +208,7 @@ app.get('/inicioMostrador', (req,res)=>{
 });
 
 app.get('/gestionMostrador',verificarSesion, (req, res)=>{     
-  connection.query('SELECT * FROM serviciosMostrador WHERE statusServicio = ? ORDER BY horaInicio ASC',['INICIADO'],(error, results)=>{
+  connection.query('SELECT * FROM serviciosmostrador WHERE statusServicio = ? ORDER BY horaInicio ASC',['INICIADO'],(error, results)=>{
       if(error){
           throw error;
       } else {
@@ -223,7 +223,7 @@ app.get('/verMostrador/:noServicio/:estacion',verificarSesion, (req, res)=>{
   const noServicio = req.params.noServicio;
   const estacion = req.params.estacion;
 
-  connection.query('SELECT * FROM serviciosMostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
+  connection.query('SELECT * FROM serviciosmostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
       if(error){
           throw error;
       } else {
@@ -238,7 +238,7 @@ app.get('/cerrarMostrador/:noServicio/:estacion',verificarSesion, (req, res)=>{
   const noServicio = req.params.noServicio;
   const estacion = req.params.estacion;
 
-  connection.query('SELECT * FROM serviciosMostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
+  connection.query('SELECT * FROM serviciosmostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
       if(error){
           throw error;
       } else {
@@ -253,7 +253,7 @@ app.get('/firmaMostradorAgente/:noServicio/:estacion',verificarSesion, (req, res
   const noServicio = req.params.noServicio;
   const estacion = req.params.estacion;
 
-  connection.query('SELECT * FROM serviciosMostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
+  connection.query('SELECT * FROM serviciosmostrador WHERE noServicio = ? AND estacion = ?',[noServicio,estacion],(error, results)=>{
       if(error){
           throw error;
       } else {
