@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Gas Unión Administrador</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <link href="/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop3 d-none d-lg-block">
+            <div class="section__content section__content--p35">
+                <div class="header3-wrap">
+                    <div class="header__logo">
+                        <a href="/administrador"> 
+                            <img src="images/icon/Logo.png" alt="GasUnion" style="height: 50px;" />
+                            
+                        </a>
+                        <div class="header--clock">
+                            <span id="clock"></span>
+                            <span id="date"></span>
+                        </div>
+                    </div>
+                    <div class="header__navbar">
+                        <ul class="list-unstyled">
+                            <li class="has-sub">
+                                <a href="/administrador">
+                                    <i class="fas fa-home"></i>Inicio
+                                    <span class="bot-line"></span>
+                                </a>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>Usuarios</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="/controlColaboradores">Gestión de Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Agregar Usuario</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Iniciar Bitacora de Asistencia</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Asistencia</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>Estaciones</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="#">Gestión de Estaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Agregar Estación</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>Aerolíneas</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="#">Gestión de Aerolíneas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Agregar Aerolínea</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>Sillas</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="#">Gestión de Sillas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Agregar Sillas</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>QR´s</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li>
+                                        <a href="#">Gestión de QR</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Agregar QR</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="#">
+                                    <i class="fas fa-users"></i>
+                                    <span class="bot-line"></span>Servicios</a>
+                                <ul class="header3-sub-list list-unstyled">
+                                    <li class="has-sub">
+                                        <a href="#"><span>Servicios Mostrador</span></a>
+                                        <ul class="header3-sub-list list-unstyled">
+                                            <li>
+                                                <a href="/gestionMostrador">Gestion de Servicios</a>
+                                            </li>
+                                            <li>
+                                                <a href="/incioMostrador">Inicio Servicio</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#"><span>Servicios Llegadas</span></a>
+                                        <ul class="header3-sub-list list-unstyled">
+                                            <li>
+                                                <a href="#">Gestion de Servicios</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Inicio Servicio</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#"><span>Control de Vuelos (Llegadas)</span></a>
+                                        <ul class="header3-sub-list list-unstyled">
+                                            <li>
+                                                <a href="#">Gestion de Servicios</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Inicio Servicio</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#"><span>Control de Vuelos (Salidas)</span></a>
+                                        <ul class="header3-sub-list list-unstyled">
+                                            <li>
+                                                <a href="#">Gestion de Servicios</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Inicio Servicio</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__tool">
+                        
+                        
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix js-item-menu">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="images/icon/usuario.png" alt="usuario" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#"><%= datos.nombreColaborador %> <%= datos.apellidoColaborador %></a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="images/icon/usuario.png" alt="usuario" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#"><%= datos.nombreColaborador %> <%= datos.apellidoColaborador %></a>
+                                            </h5>
+                                            <span class="email"><%= datos.nivelUsuario %></span>
+                                            <span class="email">- <%= datos.estacion %></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="account-dropdown__footer">
+                                        <a href="/logout">
+                                            <i class="zmdi zmdi-power"></i>Cerrar Sesión</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile header-mobile-2 d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="/administrador">
+                            <img src="images/icon/Logo.png" alt="Orion" style="height: 50px;" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="/administrador">
+                                <i class="fas fa-home"></i>Inicio</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Usuarios</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Gestión de Usuarios</a>
+                                </li>
+                                <li>
+                                    <a href="/agregarColaborador">Agregar Usuario</a>
+                                </li>
+                                <li>
+                                    <a href="#">Iniciar Bitacora de Asistencia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Asistencia</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Sedes</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Gestión de Sedes</a>
+                                </li>
+                                <li>
+                                    <a href="#">Agregar Sede</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Aerolíneas</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Gestión de Aerolíneas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Agregar Aerolínea</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>Sillas</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Gestión de Sillas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Agregar Silla</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-user"></i>QR´s</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Gestión de Codígos QR</a>
+                                </li>
+                                <li>
+                                    <a href="#">Agregar Codígo QR</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-users"></i>Servicios</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li class="has-sub">
+                                    <a class="js-arrow" href="#">Servicios Mostrador</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        <li> 
+                                            <a href="">Gestion de Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Iniciar Servicio</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a class="js-arrow" href="#">Servicios llegadas</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        <li> 
+                                            <a href="">Gestion de Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Iniciar Servicio</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a class="js-arrow" href="#">Control de Vuelos(llegadas)</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        <li> 
+                                            <a href="">Gestion de Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Iniciar Servicio</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a class="js-arrow" href="#">Control de Vuelos (Salidas)</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        <li> 
+                                            <a href="">Gestion de Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Iniciar Servicio</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="sub-header-mobile-2 d-block d-lg-none">
+            <div class="header__tool">
+                
+                <div class="account-wrap">
+                    <div class="account-item account-item--style2 clearfix js-item-menu">
+                        <div class="image">
+                            <img src="images/icon/usuario.png" alt="usuario" />
+                        </div>
+                        <div class="content">
+                            <a class="js-acc-btn" href="#"><%= datos.nombreColaborador %> <%= datos.apellidoColaborador %></a>
+                        </div>
+                        <div class="account-dropdown js-dropdown">
+                            <div class="info clearfix">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="images/icon/usuario.png" alt="usuario" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h5 class="name">
+                                        <a href="#"><%= datos.nombreColaborador %></a>
+                                    </h5>
+                                    <span class="email"><%= datos.nivelUsuario %></span>
+                                </div>
+                            </div>
+                            
+                            <div class="account-dropdown__footer">
+                                <a href="/logout">
+                                    <i class="zmdi zmdi-power"></i>Cerrar Sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END HEADER MOBILE -->
+
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7" style="padding-top: 10px;">
+
+            
+
+            <div class="container mt-5">
+                
+                <form action="/saveUser" method="POST">
+                    <!-- Datos Personales -->
+                    <div class="card">
+                        <h5 class="card-header text title-2" style="background-color:cornflowerblue">Datos de Usuario</h3>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                
+                                
+                                <div class="col-md-3">
+                                    <label for="num" class="control-label mb-1">Número de Colaborador *</label>
+                                    <input type="text" class="form-control" id="num" name="num" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="nombre" class="control-label mb-1">Nombre *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="apellido" class="control-label mb-1">Apellido(s) *</label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="estacion" class=" form-control-label">Estación *</label>
+                                    <select name="estacion" id="estacion" class="form-control">
+                                        <% opcionesSede.forEach((abreviacion) => { %>
+                                            <option><%=  abreviacion %></option>
+                                          <% }); %> 
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="rol" class=" form-control-label">Nivel de Usuario *</label>
+                                    <select name="rol" id="rol" class="form-control">
+                                        <option>ADMINISTRADOR</option>
+                                        <option>SUPERVISOR</option>
+                                        <option>GERENTE</option>
+                                        <option>COORDINADOR</option>
+                                        <option>OPERADOR</option>
+                                        <option>AGENTE</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="TIA" class="control-label mb-1">TIA (Opcional)</label>
+                                    <input type="text" class="form-control" id="TIA" name="TIA">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="siglas" class="control-label mb-1">Siglas (Opcional)</label>
+                                    <input type="text" class="form-control" id="siglas" name="siglas">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pass" class="control-label mb-1">Contraseña *</label>
+                                    <input type="text" class="form-control" id="pass" name="pass">
+                                </div>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botón de Enviar -->
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-outline-success btn-lg mx-2" >Agregar Usuarios</button>
+                        <a href="/usersControlAdmin" class="btn btn-outline-danger btn-lg mx-2" >Cancelar</a>
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const dateElement = document.getElementById('date');
+            const now = new Date();
+            
+            // Formatea la hora
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            
+            // Formatea la fecha
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            const dateString = `${year}/${month}/${day}`;
+            
+            // Actualiza los elementos en el HTML
+            clockElement.textContent = timeString;
+            dateElement.textContent = dateString;
+
+            //Ocultar contenido
+            clockElement.style.display = 'none';
+            dateElement.style.display = 'none';
+        }
+        
+        // Llama a updateClock inicialmente y luego cada segundo
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <!-- Jquery JS-->
+    <script src="/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="/vendor/slick/slick.min.js">
+    </script>
+    <script src="/vendor/wow/wow.min.js"></script>
+    <script src="/vendor/animsition/animsition.min.js"></script>
+    <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/vendor/select2/select2.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
+
+    <!-- Main JS-->
+    <script src="/js/main.js"></script>
+
+    <!-- Main JS-->
+    
+    
+</body>
+
+</html>
+<!-- end document-->
