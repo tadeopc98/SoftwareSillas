@@ -1107,6 +1107,31 @@
         updateClock();
         setInterval(updateClock, 1000);
     </script>
+    <script>
+        function obtener20CaracteresDespuesDeM1(entrada) {
+            // Utilizar expresiones regulares para obtener los 20 caracteres después de 'M1'
+            const match = entrada.match(/M1(.{1,20})/);
+          
+            if (match) {
+              const caracteresDespuesDeM1 = match[1];
+              return caracteresDespuesDeM1;
+            } else {
+              console.error('Formato de escaneo no válido');
+              return null;
+            }
+          }
+          
+          // Ejemplo de uso con tu escaneo
+          const escaneo = "M1PEREZCORIA/TADEO     Z5WNGB MEXPVRVB 1166 340Y039E0072 147>5181  3338BVB 0000000000000290000000000000 0";
+          const caracteresExtraidos = obtener20CaracteresDespuesDeM1(escaneo);
+          
+          if (caracteresExtraidos !== null) {
+            console.log('20 caracteres después de M1:', caracteresExtraidos);
+          } else {
+            console.error('No se pudieron extraer los 20 caracteres después de M1');
+          }
+          
+    </script>
         
         
 

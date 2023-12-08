@@ -449,19 +449,22 @@
                                 </div>
                                 
                                 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label for="usuarioInicio" class="control-label mb-1">Usuario que inicia</label>
                                     <input type="text" class="form-control" id="usuarioInicio" name="usuarioInicio" value="<%= datos.nombreColaborador  %> <%= datos.apellidoColaborador  %>" readonly>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label for="usuarioModifica" class="control-label mb-1">Usuario que Modifica</label>
                                     <input type="text" class="form-control" id="usuarioModifica" name="usuarioModifica" value="" readonly>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label for="usuarioCierra" class="control-label mb-1">Usuario que Cierra</label>
                                     <input type="text" class="form-control" id="usuarioCierra" name="usuarioCierra" value="" readonly>
                                 </div>
-                                
+                                <div class="col-md-3">
+                                    <label for="escanear" class="control-label mb-1">Escanear</label>
+                                    <input type="text" class="form-control" id="escanear" name="escanear">
+                                </div>
                                 
                                 
                                 <div class="col-md-2">
@@ -477,12 +480,8 @@
                                     <input type="text" class="form-control" id="noVuelo" name="noVuelo">
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="aerolinea" class=" form-control-label">Aerolinea</label>
-                                    <select name="aerolinea" id="aerolinea" class="form-control">
-                                        <% opcionesAerolinea.forEach((nombreAerolinea) => { %>
-                                            <option><%=  nombreAerolinea %></option>
-                                          <% }); %>              
-                                    </select>
+                                    <label for="aerolinea" class="control-label mb-1">Siglas de Aerolinea</label>
+                                    <input type="text" class="form-control" id="aerolinea" name="aerolinea">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="observaciones" class="control-label mb-1">Observaciones Internas</label>
@@ -550,7 +549,14 @@
                                             
                                     </select>
                                 </div>
-                                
+                                <div class="col-md-2">
+                                    <label for="origenVuelo" class="control-label mb-1">Origen</label>
+                                    <input type="text" class="form-control" id="origenVuelo" name="origenVuelo">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="destinoVuelo" class="control-label mb-1">Destino</label>
+                                    <input type="text" class="form-control" id="destinoVuelo" name="destinoVuelo">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -609,6 +615,87 @@
         updateClock();
         setInterval(updateClock, 1000);
     </script>
+    
+    <!-- Añade este script al final de tu HTML, justo antes de cerrar el body -->
+<!-- Añade este script al final de tu HTML, justo antes de cerrar el body -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener referencias a los elementos del formulario
+      const escanearInput = document.getElementById("escanear");
+      const nombrePaxInput = document.getElementById("nombrePax");
+      const vueloInput = document.getElementById("noVuelo");
+      const aerolineaInput = document.getElementById("aerolinea");
+      const asientoInput = document.getElementById("noAsiento");
+      const origenInput = document.getElementById("origenVuelo");
+      const destinoInput = document.getElementById("destinoVuelo")
+  
+      // Escuchar el evento de cambio en el campo de escaneo
+      escanearInput.addEventListener("input", function() {
+        // Obtener el valor del campo de escaneo
+        const escaneoValue = escanearInput.value.trim();
+  
+        // Extraer los primeros 20 caracteres después de 'M1'
+        const primeros20Caracteres = obtenerPrimeros20CaracteresDespuesDeM1(escaneoValue);
+  
+        // Actualizar el valor del campo nombrePax
+        nombrePaxInput.value = primeros20Caracteres;
+  
+        // Extraer el número de vuelo (caracteres 38 a 41)
+        const numeroVuelo = obtenerNumeroVuelo(escaneoValue);
+  
+        // Actualizar el valor del campo vuelo
+        vueloInput.value = numeroVuelo;
+  
+        // Extraer los caracteres 35 y 36 para la aerolínea
+        const caracteresAerolinea = obtenerCaracteresAerolinea(escaneoValue);
+  
+        // Actualizar el valor del campo aerolinea
+        aerolineaInput.value = caracteresAerolinea;
+
+        const caracteresAsiento = obtenerCaracteresAsiento(escaneoValue);
+
+        asientoInput.value = caracteresAsiento;
+
+        const caracteresOrigen = obtenerCaracteresOrigen(escaneoValue);
+
+        origenInput.value = caracteresOrigen;
+
+        const caracteresDestino = obtenerCaracteresDestino(escaneoValue);
+
+        destinoInput.value = caracteresDestino;
+      });
+  
+      // Función para obtener los primeros 20 caracteres después de 'M1'
+      function obtenerPrimeros20CaracteresDespuesDeM1(entrada) {
+        const match = entrada.match(/M1(.{1,20})/);
+        return match ? match[1] : "";
+      }
+  
+      // Función para obtener el número de vuelo (caracteres 38 a 41)
+      function obtenerNumeroVuelo(entrada) {
+        return entrada.substring(39, 43);
+      }
+  
+      // Función para obtener los caracteres 35 y 36 para la aerolínea
+      function obtenerCaracteresAerolinea(entrada) {
+        return entrada.substring(36, 38);
+      }
+
+      function obtenerCaracteresAsiento(entrada) {
+        return entrada.substring(49,52)
+      }
+
+      function obtenerCaracteresOrigen(entrada) {
+        return entrada.substring(30,33);
+      }
+
+      function obtenerCaracteresDestino(entrada) {
+        return entrada.substring(33,36);
+      }
+    });
+  </script>
+  
+  
 
     <!-- Jquery JS-->
     <script src="/vendor/jquery-3.2.1.min.js"></script>
@@ -637,6 +724,18 @@
 
     <!-- Main JS-->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad"></script>
+
+    <!-- Añade este script al final de tu HTML, justo antes de cerrar el body -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener referencia al campo de escaneo
+      const escanearInput = document.getElementById("escanear");
+  
+      // Enfocar automáticamente el campo de escaneo al cargar la página
+      escanearInput.focus();
+    });
+  </script>
+  
     
     
 </body>

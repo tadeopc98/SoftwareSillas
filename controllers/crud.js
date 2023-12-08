@@ -83,6 +83,8 @@ exports.inicioServicioMostrador = (req, res)=>{
     const tipoSilla = req.body.tipoSilla;
     const servicioSolicitado = req.body.ServicioSolicitado;
     const statusServicio = 'INICIADO';
+    const origen = req.body.origenVuelo;
+    const destino = req.body.destinoVuelo;
 
     connection.query('SELECT siglas FROM colaboradores WHERE noColaborador = ? AND estacion = ?',[noColaborador,estacion], (error, results3)=>{
         if(error){
@@ -97,7 +99,8 @@ exports.inicioServicioMostrador = (req, res)=>{
                     connection.query('INSERT INTO serviciosmostrador SET ?',{nombrePax:nombrePax,aerolinea:aerolinea,vuelo:vuelo,noSilla:noSilla,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                                              noColaborador:siglas,fechaServicio:fechaServicio,tipoVuelo:tipoVuelo,origenReserva:origenReserva,
                                                                              qrAsignado:qrAsignado,usuarioInicio:usuarioInicio,observaciones:observaciones,
-                                                                             estacion:estacion,horaInicio:horaInicio,tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado,statusServicio:statusServicio}, (error, results2)=>{
+                                                                             estacion:estacion,horaInicio:horaInicio,tipoSilla:tipoSilla,servicioSolicitado:servicioSolicitado,statusServicio:statusServicio,
+                                                                            origen:origen,destino:destino}, (error, results2)=>{
                         if(error){
                             console.log(error);
                         }else{
@@ -142,6 +145,7 @@ exports.modificaMostrador = (req, res)=>{
     const tipoSilla = req.body.tipoSilla;
     const servicioSolicitado = req.body.ServicioSolicitado;
     const statusServicio = 'INICIADO';
+
 
     connection.query('UPDATE serviciosmostrador SET ? WHERE noServicio = ? AND estacion = ?',[{nombrePax:nombrePax,vuelo:vuelo,puerta:puerta,ETA:ETA,ASIENTO:asiento,
                                                             tipoVuelo:tipoVuelo,origenReserva:origenReserva,
